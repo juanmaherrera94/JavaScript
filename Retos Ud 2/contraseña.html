@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contraseña.html</title>
+</head>
+<body>
+    <script>
+        let contrasena;
+        const contieneMayus = /[A-Z]/; // contiene al menos una mayuscula
+        const contieneMinus = /[a-z]/; // contiene al menos una minuscula
+        const contieneNumero = /\d/; //  contiene al menos un numero
+        const caracteres = /[-_=\*\+\$@#]/; //contiene caracteres especiales
+
+        do {
+            contrasena = prompt("Introduce la contraseña:");
+            
+            let requisitos = 0;
+
+            if (contrasena.length >= 8) {
+                requisitos++;
+            } else {
+                alert("La contraseña debe tener al menos 8 caracteres");
+            }
+
+            if (contieneMayus.test(contrasena)) {
+                requisitos++;
+            } else {
+                alert("La contraseña debe contener al menos una letra mayuscula");
+            }
+
+            if (contieneMinus.test(contrasena)) {
+                requisitos++;
+            } else {
+                alert("La contraseña debe contener al menos una letra minuscula.");
+            }
+
+            if (contieneNumero.test(contrasena)) {
+                requisitos++;
+            } else {
+                alert("La contraseña debe contener al menos un numero.");
+            }
+
+            if (caracteres.test(contrasena)) {
+                requisitos++;
+            } else {
+                alert("La contraseña debe contener al menos un  caracteres especial");
+            }
+
+            if (requisitos === 5) { //se cumplen todos
+                alert("La contraseña  es segura!!!");
+            } else if (requisitos === 3 || requisitos === 4) { // si se cumplen tres o cuatro es poco segura ya que hay uno o dos requisitos que no se cumplen
+                                                            
+                alert("La contraseña es poco segura.");
+            } else {
+                alert("La contraseña es debil. Introduce una segura porfavor!");// no se cumple ninguna y hasta que no escriba una contraseña segura no saldra
+            }
+ 
+        } while (contrasena.length < 8 || 
+                 !contieneMayus.test(contrasena) || 
+                 !contieneMinus.test(contrasena) || 
+                 !contieneNumero.test(contrasena) || 
+                 !caracteres.test(contrasena));
+                 
+    </script>
+</body>
+</html>

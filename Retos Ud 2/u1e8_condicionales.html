@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u1e8_condicionales.html</title>
+</head>
+<body>
+    <script>
+        let pregunta= prompt("¿Estas pensando en un malware que se puede borrar con antivirus? (SI / NO )")
+
+        if(pregunta==="si"){
+            let pregunta2= prompt("¿El malware se multiplica?")
+
+            if (pregunta2 === "si"){
+                alert("ES UN GUSANO!")
+            }else{
+                alert("ES UN TROYANO!")
+            }
+
+        }else{
+            let pregunta3 = prompt("¿El malware se soluciona con una actualizacion?")
+
+            if(pregunta3 === "si"){
+                alert("ES UN BUG O ESPLOIT")
+            }else{
+                alert("ES SPAM!!")
+            }
+        }
+    </script>
+</body>
+</html>

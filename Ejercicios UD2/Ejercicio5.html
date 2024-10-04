@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+/*
+Actividad 5: Cambio de Dinero
+Realiza un programa que lea una cantidad de dinero (múltiplo de 5) y desglose el cambio en billetes de 500, 200, 100, 50, 20, 10, 5, intentando dar el mínimo número de billetes.
+
+El programa mostrará por consola el número mínimo de billetes de cada cantidad.
+
+**/
+
+const cambioDinero = (cantidad) =>{
+
+    let billetesDe500 = 0;
+    let billetesDe200 = 0;
+    let billetesDe100 = 0;
+    let billetesDe50 = 0;
+    let billetesDe20 = 0;
+    let billetesDe10 = 0;
+    let billetesDe5 = 0;
+
+    billetesDe500 = Math.floor(cantidad / 500); //Math.floor se queda con la parte entera de la division
+    cantidad = cantidad % 500; // aqui actualizamos la cantidad restante
+
+    billetesDe200 = Math.floor(cantidad / 200);
+    cantidad = cantidad % 200;
+
+    billetesDe100 = Math.floor(cantidad / 100);
+    cantidad = cantidad % 100;
+
+    billetesDe50 = Math.floor(cantidad / 50);
+    cantidad = cantidad % 50;
+
+    billetesDe20 = Math.floor(cantidad / 20);
+    cantidad = cantidad % 20;
+
+    billetesDe10 = Math.floor(cantidad / 10);
+    cantidad = cantidad % 10;
+
+    billetesDe5 = Math.floor(cantidad / 5);
+    cantidad = cantidad % 5;
+
+    let resultado = billetesDe500 + " billetes de 500<br>" +
+                    billetesDe200 + " billetes de 200<br>" +
+                    billetesDe100 + " billetes de 100<br>" +
+                    billetesDe50 + " billetes de 50<br>" +
+                    billetesDe20 + " billetes de 20<br>" +
+                    billetesDe10 + " billetes de 10<br>" +
+                    billetesDe5 + " billetes de 5";
+
+    return resultado;
+}
+
+let cantidad = parseInt(prompt("Escribe un numero multiplo de 5"));
+document.write(cambioDinero(cantidad))
+
+</script>

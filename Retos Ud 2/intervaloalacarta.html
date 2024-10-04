@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intervaloalacarta.html</title>
+</head>
+
+<body>
+    <script>
+
+        let horaInicio;
+
+        let horaFin;
+
+        let intervalo;
+
+        //////////////////////////////////////////////////////////
+        do {
+            if (horaInicio < 0 || horaInicio > 24) {
+
+                alert("La hora no es correcta, escribela de nuevo")
+            }
+            horaInicio = parseInt(prompt("Escribe la hora de inicio"));
+
+        } while (horaInicio < 0 || horaInicio > 24);
+
+        /////////////////////////////////////////////////
+
+        do {
+            horaFin = parseInt(prompt("Escribe la hora de fin"));
+
+            if (horaFin < 0 || horaFin > 24) {
+
+                alert("La hora no es correcta, escribrela de nuevo")
+
+            }
+
+        } while (horaFin < 0 || horaFin > 24);
+
+        /////////////////////////////////////////////
+
+        do {
+            intervalo = parseInt(prompt("Escribe el intervalo"))
+
+
+            if (intervalo < 0) {
+
+                alert("El intervalo no es correcto, escribelo de nuevo")
+
+            }
+
+        } while (intervalo < 0);
+
+        ///////////////////////////////////
+
+        for (let i = horaInicio; i <= horaFin; i++) {
+
+            for (let min = 0; min < 60; min += intervalo) {
+                // operador ternario
+                let horaFormateada= i < 10 ? "0" + i : i // si la i es menor de diez añade un cero si no lo deja como esta
+                let minFormateado= min < 10 ? "0" + min : min //si min es menor de diez añade un cero si no lo deja como esta
+
+                    document.write(horaFormateada + ":" + minFormateado + "<br>")
+                } 
+
+            }
+
+        
+
+    </script>
+</body>
+
+</html>

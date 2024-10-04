@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u1efinal_trivial.html</title>
+</head>
+
+<body>
+    <script>
+
+        let arrayDeCategorias = ["Arte", "Geografia", "Espectaculos", "Historia", "Ciencias", "Deportes"];
+        let aciertos = 0;
+        let fallos = 0;
+
+        /*
+        mientras que los aciertos sean menor 4 y los fallos menor 3 seguira preguntando que categoria elegir
+        una vez llegue a cuatro acertados o tres fallados se va a detener
+        */
+        while (aciertos < 4 && fallos < 3) {
+            
+            const categoriaSeleccionada = prompt("Elige una categoría: " + arrayDeCategorias.join(" - "));
+
+            switch (categoriaSeleccionada) {
+                case "Arte":
+                    let respuestaArte = prompt("¿Quién pintó la famosa obra pacifista 'Guernica'?");
+                    if (respuestaArte === "Picasso") {
+                        alert("Correcto!");
+                        aciertos++;
+                    } else {
+                        alert("Has fallado! La respuesta es Piccaso");
+                        fallos++;
+
+                    }
+                    break;
+                case "Geografia":
+                   let  respuestaGeografia = prompt("¿Qué país tiene más habitantes?");
+                    if (respuestaGeografia === "China") {
+                        alert("Correcto!");
+                        aciertos++;
+                    } else {
+                        alert("Has fallado! La respuesta es China");
+                        fallos++;
+
+                    }
+                    break;
+                case "Espectaculos":
+                    let respuestaEspectaculos = prompt("¿Cómo se llama el protagonista de Bola de Dragón?");
+                    if (respuestaEspectaculos === "Goku") {
+                        alert("Correcto!");
+                        aciertos++;
+                    } else {
+                        alert("Has fallado! La respuesta es Goku");
+                        fallos++;
+
+                    }
+                    break;
+                case "Historia":
+                    let respuestaHistoria = prompt("¿Que eran los samurais?");
+                    if (respuestaHistoria === "Antiguos guerreros japoneses") {
+                        alert("Correcto!");
+                        aciertos++;
+                    } else {
+                        alert("Has fallado! La respuesta es Antiguos gerreros japoneses");
+                        fallos++;
+
+                    }
+                    break;
+                case "Ciencias":
+                    let respuestaCiencias = prompt("¿Qué animal se conoce como 'el mejor amigo del hombre'?");
+                    if (respuestaCiencias === "Perro") {
+                        alert("Correcto!");
+                        aciertos++;
+                    } else {
+                        alert("Has fallado! La respuesta es Antiguos gerreros Perro");
+                        fallos++;
+
+                    }
+                    break;
+                case "Deportes":
+                    let respuestaDeportes = prompt("¿Cuantas Champions tiene el Real Madrid?");
+                    if (respuestaDeportes === "quince") {
+                        alert("Correcto!");
+                        aciertos++;
+                    } else {
+                        alert("Has fallado! La respuesta es quince");
+                        fallos++;
+
+                    }
+                    break;
+                default:
+                    alert("Selecciona una categoria valida!");
+                    break;
+            }
+        }
+
+
+        //cuando los aciertos lleguen a cuatro hemos ganado y cuando los fallos lleguen a 3 hemos perdido
+
+        if (aciertos >= 4) {
+            alert("Has ganado!")
+        } else if (fallos >= 3) {
+            alert("Has perdido!")
+        }
+
+
+    </script>
+</body>
+
+</html>

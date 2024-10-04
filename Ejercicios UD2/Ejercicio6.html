@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+
+    
+        const numeroPatrones = () =>{
+            let texto = prompt("Escribe una cadena de texto");
+            const patron1= /00/;
+            const patron2= /101/;
+            const patron3= /ABC/;
+            const patron4= /HO/;
+
+            let contador=0;
+
+            if (patron1.test(texto)){
+                contador++;
+
+            } 
+            if (patron2.test(texto)){
+                contador++;
+
+            }
+            if (patron3.test(texto)){
+                contador++;
+            }
+            if (patron4.test(texto)){
+                contador++;
+            }
+
+            document.write("Numero de patrones encontrados:  " + contador);
+
+
+        }
+
+        numeroPatrones();
+    
+
+    </script>
+</body>
+</html>

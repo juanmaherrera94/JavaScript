@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+</head>
+<body>
+    <h2>NUMEROS PARES</h2>
+    <script>
+
+        /**
+         * Actividad 3: Números Pares
+        Realiza un programa que lea un número N y muestre por consola todos los números pares desde 2 hasta N (inclusive).
+
+        Cada número se mostrará en una línea distinta.
+
+        Nota: N siempre será mayor o igual a 2.
+        */
+        let numero
+
+        do {
+            numero = parseInt(prompt("Escribe un numero entero igual o mayor a 2 "));
+
+        } while (numero<2);
+        
+        
+       
+
+        for (let i=2;i<=numero; i++){
+
+
+            if(i  % 2 === 0){
+
+                document.write("<br>" + i + "<br>");
+
+
+            }
+        }
+    </script>
+</body>
+</html>

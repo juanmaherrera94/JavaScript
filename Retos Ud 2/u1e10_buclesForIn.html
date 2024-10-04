@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u1e10_buclesForIn.html</title>
+</head>
+<body>
+    <script>
+        const listaJugadores= ["Jugador1 " , "Jugador2 " , "Jugador3"]
+
+        let dorsal=3
+
+        listaJugadores.forEach(element => {
+            document.write(dorsal + " " + element + "<br>")
+            dorsal += 3
+        });
+
+        //mostrar un bucle for que itere del 0 al 20 que vaya mostrando el valor de i de tres en tres con un for, do while y un while
+
+        for(let i=0;i<20;i+=3){
+            document.write(i)
+
+        }
+
+        let j=0
+        
+        while(j<=20){
+            document.write(j + "<br>")
+            j+=3
+        }
+
+        let x = 0;
+        do {
+        document.write(x + "<br>");
+        x += 3;
+        } while(x <= 20);
+
+    </script>
+</body>
+</html>

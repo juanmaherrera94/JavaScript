@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <h2>NUMEROS IMPARES</h2>
+    <script>
+
+        /**
+         Actividad 4: Números Impares
+        Realiza un programa que lea un número N y muestre por consola todos los números impares desde N (inclusive) hasta 1.
+
+        Cada número se mostrará en una línea distinta.
+
+        Nota: N siempre será mayor o igual a 1.
+        */
+        let numero
+
+        do {
+            numero = parseInt(prompt("Escribe un numero entero igual o mayor a 1 "));
+
+        } while (numero<1);
+        
+        
+       
+
+        for (let i=numero;i>=1; i--){
+
+
+            if(i  % 2 !== 0){
+
+                document.write("<br>" + i + "<br>");
+
+
+            }
+        }
+    </script>
+</body>
+</html>
