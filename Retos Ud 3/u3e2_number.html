@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u3e2_number.html</title>
+</head>
+<body>
+    <script>
+        /*
+        Ejercicio 4: u3e2_number.html
+        Crea un conversor de bases que solicite al usuario en qué base está el número 
+        que va a introducir (binario, decimal, octal, hexadecimal) y muestre el número en las 4 bases. Trata de hacerlo de la manera más optimizada posible
+        **/
+        let base = prompt("Elige en que base esta el numero que va a introducir: (binario,decimal,octal,hexadecimal)");
+
+        let numero = prompt("Elige en que base esta el numero que va a introducir");
+
+        let baseBinario;
+        let baseDecimal;
+        let baseOctal;
+        let baseHexadecimal;
+
+        switch (base) {
+            case "decimal":
+                baseDecimal = parseInt(numero,10);
+                break;
+            case "octal":
+                baseDecimal= parseInt(numero,8)
+                break; 
+            case "binario":
+                baseDecimal= parseInt(numero,2)
+                break;
+            case "hexadecimal":
+                baseDecimal= parseInt(numero,16)
+                break;
+                break;
+        }
+
+        baseBinario= baseDecimal.toString(2);
+        baseOctal= baseDecimal.toString(8);
+        baseHexadecimal= baseDecimal.toString(16);
+
+        document.write("<p> El numero en binario es: " + baseBinario);
+        document.write("<p> El numero en octal es: " + baseOctal);
+        document.write("<p> El numero en hexadecimal es: " + baseHexadecimal);
+        document.write("<p> El numero en decimal es: " + baseDecimal);
+
+
+
+
+    </script>
+
+</body>
+</html>
