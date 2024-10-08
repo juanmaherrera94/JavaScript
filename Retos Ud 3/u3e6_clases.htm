@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u3e6_clases.htm</title>
+</head>
+<body>
+    <script>
+    class Sandkills{
+
+             constructor(nombre,edad,especialidad,companiero){
+
+                this.nombre=nombre;
+                this.edad=edad;
+                this.especialidad=especialidad;
+                this.companiero=companiero;
+
+             }
+
+             getNombre(){
+                
+                return this.nombre;
+             }
+             getEdad(){
+                return this.edad;
+             }
+
+             getEspecialidad(){
+                return this.especialidad;
+
+             }
+
+             getNombreCompanero(){
+
+                return this.companiero.getNombre();
+             }
+
+             getCompaniero(){
+
+                return this.companiero=companiero;
+             }
+
+             setNombre(){
+
+                return this.nombre=nombre;
+             }
+
+             setEdad(){
+
+                return this.edad=edad;
+             }
+
+             setEspecialidad(){
+
+                return this.especialidad=especialidad;
+             }
+
+             setCompaniero(sandkill){
+
+                return this.companiero=sandkill;
+            
+            }
+
+             setEspecialidadNombre(nombreEspecialidad){
+
+                if (nombreEspecialidad === 1){
+                        return "Sistemas";
+                }else if(nombreEspecialidad === 2){
+                        return "Web"; 
+                }else if (nombreEspecialidad === 3){
+                        return "Multiplataforma";
+                }
+             }
+
+             toString(){
+
+                return "El nombre es :" + getNombre + "con edad :" + getEdad + "su especialidad es " + getEspecialidad + "y su compañero es " + getNombreCompanero;
+             }
+
+           /*   let sandkill1 = new Sandkills("John", 25, "Web", null);
+             let sandkill2 = new Sandkills("Jane", 28, "Sistemas", sandkill1); */
+             
+        }
+    </script>
+</body>
+</html>
