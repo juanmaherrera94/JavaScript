@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u3e3_math.html</title>
+</head>
+<body>
+    <script>
+        /*
+
+        Ejercicio 5: u3e3_math.html
+        Realiza un programa que permita elegir al usuario un tipo de lotería del estado y genere los números aleatorios en la propia página (no en un alert). Se mostrarán los siguientes tipos de loterías:
+
+        Lotería Nacional (los ceros a la izquierda deben mostrarse).
+        Quiniela.
+        Primitiva (con complementario y reintegro).
+
+        **/
+
+
+        let loteria = prompt("Elige un tipo de loteria: (Nacional, Quiniela, Primitiva)");
+        const primitivaArray = [];
+
+        const quiniela = () =>{
+
+            for (let i = 1; i < 15; i++) {
+                let numeroAleatorio = Math.round(Math.random()*2);
+                if (numeroAleatorio===0) {
+                    numeroAleatorio = "X";
+                }
+                document.write("<p>Partido "+i+": "+numeroAleatorio+"</p>\n");
+            }
+        }
+
+        const primitiva = () => {
+            let numeroAleatorio;
+            for (let i = 0; i < 7; i++) {
+                do {
+                    numeroAleatorio = Math.round(Math.random()*49+1);
+                } while (primitivaArray.includes(numeroAleatorio));
+                 
+                primitivaArray.push(numeroAleatorio);
+            }
+
+            primitivaArray.push(Math.round(Math.random()*10));
+
+            document.write(primitivaArray);
+        }
+
+        switch (loteria) {
+            case "nacional":
+                document.write("00" +  Math.round(Math.random()*100001));
+                break;
+            case "quiniela":
+                quiniela();
+                break;
+            case "primitiva":
+                primitiva();
+                break;
+            default:
+                break;
+        }
+    </script>
+</body>
+</html>

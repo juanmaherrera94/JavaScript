@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u3e5_objetos.html</title>
+</head>
+<body>
+    <script>
+        /*
+
+        
+        **/
+    const sandkill1 = {
+    nombre : "Pepe",
+    edad : 28,
+    especialidad : "panadero",
+}
+
+const sandkill2 = new Object 
+    sandkill2.nombre = "Juan";
+    sandkill2.edad = 25;
+    sandkill2.especialidad = "Pintor";
+
+class Sandkill {
+    constructor (nombre, edad, especialidad){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.especialidad = especialidad;
+    }
+
+    toString() {
+        return this.nombre + ", " + this.edad + ", " + this.especialidad;
+    }
+}
+
+let sandkill3 = new Sandkill ("Antonio", 18, "albañil");
+
+const mostrarObjeto = (objeto) => {
+    let resultado = "";
+    for (let i in objeto) {
+        resultado += objeto[i] + " ";;
+    }
+    return resultado;
+}
+
+sandkill1.nacionalidad = "España";
+sandkill2.lenguajeFavorito = "Ingles";
+
+delete sandkill3.especialidad;
+
+document.write(mostrarObjeto(sandkill1) + "<br>");
+document.write(mostrarObjeto(sandkill2) + "<br>");
+document.write(mostrarObjeto(sandkill3) + "<br>");
+
+    </script>
+</body>
+</html>

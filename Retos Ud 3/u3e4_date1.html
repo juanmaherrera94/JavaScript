@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>u3e4_date1.html</title>
+</head>
+<body>
+    <script>
+        /*
+        Ejercicio 6: u3e4_date1.html
+        Realiza un programa que sea capaz de calcular 
+        cuántas veces cae en sábado el solsticio de verano desde el año 2000 hasta el año 2100.
+        **/
+        let contador=0;
+
+           for (let i = 2000; i < 2101; i++) {
+                const fecha = new Date(i, 5, 20);
+                if (fecha.getDate() === 20 && fecha.getDay() === 6) {
+                    document.write("<p> Años: "+i+"</p>");
+                    contador++;
+                }
+                
+            }
+
+            document.write("Caen " +contador + " dias en sabado desde el año 2000 al 2100")
+            
+    </script>
+</body>
+</html>
