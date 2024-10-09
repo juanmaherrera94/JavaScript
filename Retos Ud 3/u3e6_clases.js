@@ -33,7 +33,7 @@
 
     getNombreCompanero() {
       
-      return this.companiero ? this.companiero.getNombre() : "Ninguno";
+      return this.companiero.getNombre();
     }
     
 
