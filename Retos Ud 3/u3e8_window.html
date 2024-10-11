@@ -15,19 +15,55 @@
     
     let poPup;
 
-    document.getElementById("1").onclick= function(){
+    const colores = ["blue", "green", "yellow", "red", "purple", "orange"];
 
-        poPup.open("","",toolbar=no,scrollbars=no,resizable=no);
+    const abrirVentana = () => {
+
+        poPup = window.open("", "_blank", "toolbar=no,scrollbars=no,resizable=no,width=600,height=600");
+
+        //escribo dentro de la ventana una vez este abierta
+
+        poPup.document.write(`<button id='cerrar'>Cerrar</button>`);
+
+        poPup.document.getElementById("cerrar").addEventListener("click", ()=> poPup.close());
+
+
+        poPup.document.write(`<button id="mover">Mover Ventana</button><br>`);
+
+        poPup.document.getElementById("mover").addEventListener("click", () => {
+        let movimiento = poPup.prompt("Introduce los dos valores con una coma (x,y):");
+        let [x,y] = movimiento.split(",");
+        poPup.moveTo(parseInt(x),parseInt(y));
+    });
+    //recorro el array de colores
+    
+    colores.forEach(color => {
+        poPup.document.write(`<button id=${color}">${color}</button>`);
+        poPup.document.getElementById(`${color}`).addEventListener("click", () => {
+            poPup.document.getElementById("texto").style.color = `${color}`;
+        })
+    })
+    poPup.document.write("<p id='texto'>Hola mundo</p>");
+
+
+    }
+
+
+    const cerrarVentana = ()=>{
+
+        poPup.close();
     }
 
     
-    document.getElementById("2").onclick= function(){
+    const imprimirVentana = ()=>{
 
-    poPup.open("","",toolbar=no,scrollbars=no,resizable=no);
-
+         poPup = window.print();
     }
 
-
+    // Asignar los eventos a los botones
+    document.getElementById("1").addEventListener("click", abrirVentana);
+    document.getElementById("2").addEventListener("click", cerrarVentana);
+    document.getElementById("3").addEventListener("click", imprimirVentana);
 
     </script>
 </body>
