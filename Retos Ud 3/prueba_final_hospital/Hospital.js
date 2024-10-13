@@ -1,64 +1,53 @@
 class Hospital {
-    constructor(nombre, localidad) {
-        this.nombre = nombre;
-        this.localidad = localidad;
-        this.personal = [];
-        this.pacientes = [];  // Inicializamos el array de pacientes
-        this.responsable = null; // Inicializamos responsable
+    constructor(pacientes, personal, supervisor, localidad) {
+        this.pacientes = pacientes;   // Array de objetos Paciente
+        this.personal = personal;     // Array de objetos Personal
+        this.supervisor = supervisor; // Supervisor del hospital
+        this.localidad = localidad;   
     }
 
-    agregarPersonal = (personal) => {
-        this.personal.push(personal);  // Agrega el objeto personal
+    getPacientes() {
+        return this.pacientes;
     }
 
-    getNombre() {
-        return this.nombre;
+    getPersonal() {
+        return this.personal;
+    }
+
+    getSupervisor() {
+        return this.supervisor;
     }
 
     getLocalidad() {
         return this.localidad;
     }
 
-    getResponsable() {
-        return this.responsable;  // Devuelve el responsable
+    setPacientes(pacientes) {
+        this.pacientes = pacientes;
     }
 
-    setNombre(nombre) {
-        this.nombre = nombre;
+    setPersonal(personal) {
+        this.personal = personal;
+    }
+
+    setSupervisor(supervisor) {
+        this.supervisor = supervisor;
     }
 
     setLocalidad(localidad) {
         this.localidad = localidad;
     }
 
-    setResponsable(responsable) {
-        this.responsable = responsable;
-    }
-
-    agregarPaciente = (paciente) => {
-        this.pacientes.push(paciente);  // Agrega el objeto paciente
-    }
-
-    toString() {
-        let informacion = "El nombre del hospital es: " + this.getNombre() +
-            ", de la localidad: " + this.getLocalidad();
-
-        if (this.responsable) {
-            informacion += ", el responsable es: " + this.getResponsable();
-        }
-
-        informacion += "<br>Personal:<br>";
-
-        this.personal.forEach((element) => {
-            informacion += element.toString() + "<br>";
+    mostrarDatos() {
+        document.write(`Hospital en ${this.localidad}, supervisado por ${this.supervisor} <br>`);
+        document.write('<br>Pacientes: <br>');
+        this.pacientes.forEach(paciente => {
+            document.write(paciente.toString()+`<br>`);
         });
-
-        informacion += "<br>Pacientes:<br>";
-        this.pacientes.forEach((element) => {
-            informacion += element.toString() + "<br>";
+        document.write('<br>Personal:<br>');
+        this.personal.forEach(personal => {
+            document.write(personal.toString()+`<br>`);
         });
-
-        return informacion;
     }
 }
 
@@ -73,7 +62,7 @@ class Personal {
     }
 
     getEspecialidad() {
-        return this.getEspecialidad(this.especialidad);
+        return this.especialidad;
     }
 
     setNombre(nombre) {
@@ -100,7 +89,7 @@ class Paciente {
     }
 
     getPersonal() {
-        return this.personal.getNombre();  // Devuelve el nombre del personal
+        return this.personal.getNombre();  
     }
 
     setNombre(nombre) {
@@ -117,18 +106,13 @@ class Paciente {
 }
 
 // Ejemplo de uso
-const hospital = new Hospital("Hospital General", "Madrid");
-const personal1 = new Personal("Dr. Martínez", 1); // Médico
-const personal2 = new Personal("Enfermera López", 2); // Enfermera
+const personal1 = new Personal('Dr. Rodrigo', 'Cardiología');
+const personal2 = new Personal('Enfermera Sofía', 'Pediatría');
 
-hospital.agregarPersonal(personal1);  // Agrega personal1 al hospital
-hospital.agregarPersonal(personal2);  // Agrega personal2 al hospital
+const paciente1 = new Paciente('Juan Pérez', personal1);
+const paciente2 = new Paciente('Ana García', personal2);
 
-const paciente1 = new Paciente("Juan Pérez", personal1);
-const paciente2 = new Paciente("Ana Gómez", personal2);
+const hospital = new Hospital([paciente1, paciente2], [personal1, personal2], 'Dr. Carlos López', 'Madrid');
 
-hospital.agregarPaciente(paciente1);  // Agrega paciente1 al hospital
-hospital.agregarPaciente(paciente2);  // Agrega paciente2 al hospital
-
-// Muestra el hospital y su personal
-document.write(hospital.toString());
+// Mostrar datos del hospital
+hospital.mostrarDatos();
