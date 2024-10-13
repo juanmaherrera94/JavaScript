@@ -1,3 +1,13 @@
+
+/**
+ * @author Juanma y Mario
+    * Ejercicio 15: u3e11_prueba_final_hospital.html
+    Diseña un programa que gestione los siguientes datos:
+    Hospital: nombre, localidad, responsable.
+    Personal: nombre, especialidad (médico, enfermera, celador).
+    Paciente: nombre, personal asignado.
+    Un hospital puede tener varios pacientes y personal, pero un paciente y un personal solo pertenecen a un hospital. Gestiona la inserción, modificación, borrado y visualización de los datos.
+ */
 class Hospital {
     constructor(pacientes, personal, supervisor, localidad) {
         this.pacientes = pacientes;   // Array de objetos Paciente
