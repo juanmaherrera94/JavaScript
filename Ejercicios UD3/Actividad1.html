@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad1</title>
+</head>
+
+<body>
+    <script>
+
+        let cadena = "";
+        const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+        const arrayDeLetras = [];
+
+        const pideDNI = () => {
+
+            cadena = prompt("Inserte DNI: (Escribe -1 para salir)");
+
+            // si escribe -1 se saldra del programa
+            if (cadena === "-1") {
+                clearInterval(interval);
+                document.write(arrayDeLetras);
+
+                // Validar que el DNI tenga 8 dgitos
+            } else if (cadena.length !== 8) {
+                alert("Introduce 8 dígitos");
+
+            }else{
+
+                arrayDeLetras.push(letras.charAt(cadena % 23));
+            }
+
+        }
+        
+        const interval = setInterval(pideDNI, 5000)
+
+    </script>
+</body>
+
+</html>
