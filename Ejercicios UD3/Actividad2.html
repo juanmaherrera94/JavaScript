@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad2</title>
+</head>
+<body>
+    <script>
+        /*
+        Actividad 2
+        Realiza un programa que, pasados 20 segundos,
+        nos muestre una sola vez la fecha actual del sistema.
+        **/
+        const mostrarFecha = () =>{
+            let fecha=new Date;
+            document.write(fecha.toLocaleDateString("es"));
+        }
+
+        let mostrar = setTimeout(mostrarFecha, 20000)
+    </script>
+</body>
+</html>
