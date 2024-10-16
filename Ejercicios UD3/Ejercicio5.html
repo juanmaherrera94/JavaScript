@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<body>
+    <script>
+
+ const mostrarInformacion = () =>{
+
+        let cadena =  prompt("Escribe tu datos con el siguiente formado: nombre:apellidos:telefono:email:codigopostal");
+        let desglose= cadena.split(":");
+        let emailDesglosado= desglose[3].split("@");
+        let servidor=emailDesglosado[1];
+
+        return document.write(
+            "Codigo postal: " + desglose[4] + "<br>" + 
+            "Apellidos: " + desglose[1] + "<br>" + 
+            "Email: " + desglose[3] + "<br>" + 
+            "Servidor: " + servidor
+        );
+ }
+
+ mostrarInformacion();
+
+    </script>
+</body>
+</html>
