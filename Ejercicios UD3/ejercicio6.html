@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+
+<body>
+    <script>
+
+        const clientes = [
+            { nombre: 'Laura', localidad: 'Santander', cuota: 50 },
+            { nombre: 'Álvaro', localidad: 'Castro', cuota: 50 },
+            { nombre: 'Igor', localidad: 'Castro', cuota: 60 },
+            { nombre: 'Ivan', localidad: 'Santander', cuota: 40 },
+            { nombre: 'Mónica', localidad: 'Zamora', cuota: 30 },
+            { nombre: 'Javi', localidad: 'Bilbao', cuota: 30 },
+            { nombre: 'David', localidad: 'Bilbao', cuota: 50 },
+            { nombre: 'José Luis', localidad: 'Bilbao', cuota: 60 }
+        ];
+
+        // metodo para mostrar todos los usuarios en una tabla
+        const todosLosUsuarios = () => {
+
+            let tabla = `<table border="1">
+                <tr><th>Nombre</th><th>Localidad</th><th>Cuota</th></tr>`;
+
+            clientes.forEach(cliente => {
+                tabla += '<tr>' +
+                    '<td>' + cliente.nombre + '</td>' +
+                    '<td>' + cliente.localidad + '</td>' +
+                    '<td>' + cliente.cuota + '</td>' +
+                    '</tr>';
+
+            });
+
+            tabla += `</table>`;
+
+            return document.write(tabla);
+        }
+
+        const menu = () => {
+
+            let cadena;
+
+            do {
+                cadena = prompt("Elige una opción: 1.Todos los usuarios: 2.Usuarios de una provincia: 3.Cuota mayor o menor");
+
+                switch (cadena) {
+                    case "1":
+                        todosLosUsuarios();
+                        break;
+                    case "2":
+                        usuariosDeUnaProvincia();
+                        break;
+                    case "3":
+                        cuotaMayorOmenor();
+                        break;
+                    default:
+                        alert("No existe ninguna opcion");
+                        break;
+                }
+            } while (cadena !== "1" && cadena !== "2" && cadena !== "3");
+        }
+
+
+
+        menu();
+
+
+    </script>
+
+
+</body>
+
+</html>
