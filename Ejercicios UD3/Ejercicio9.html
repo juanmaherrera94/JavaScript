@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad9</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Actividad 9
+        Queremos programar un juego de dados en un página web. El usuario empieza con 50€ para poder apostar. El usuario decide a que número apuesta del 1 al 6, y también que cantidad de euros quiere apostar. 
+        Se “lanza” un dado (asignación al azar de un número del a 1 al 6) Si el usuario acierta el número, gana el doble de lo que ha postado. Si no acierta, pierde todo lo apostado. El juego acaba cuando el usuario llega a 0 euros o al llegar a 200 euros
+        */
+        let ficha = 50;
+
+        while (ficha > 0 && ficha < 200) {
+
+
+            let respuestaApuesta = parseInt(prompt("¿Que numero quieres apostar? (1-6)"));
+
+            let respuestaCantidad = parseInt(prompt("¿Cuanta cantidad quieres apostar?" + "Tienes de saldo" + ficha));
+
+            let lanzaDado = Math.floor(Math.random() * 6) + 1;
+
+            alert("El numero que ha salido es :" + lanzaDado);
+
+            if (respuestaApuesta === lanzaDado) {
+
+                ficha += respuestaCantidad * 2;
+
+            } else {
+                ficha -= respuestaCantidad;
+            }
+        }
+
+        if (ficha <=0 ){
+            alert("Has perdido todo tu dinero, fin del juego");
+        }else if(ficha >=200){
+            alert("Enhorabuena! Has llegado a 200 euros, fin del juego");
+        }
+    </script>
+</body>
+
+</html>

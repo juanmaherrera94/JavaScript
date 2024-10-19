@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio5</title>
 </head>
+
 <body>
     <script>
+        /*
+    Actividad 5
+    Realiza un programa que reciba una cadena con el siguiente formato:
+    nombre:apellidos:telefono:email:codigopostal
 
- const mostrarInformacion = () =>{
+    Debe desglosar y mostrar la siguiente información:
 
-        let cadena =  prompt("Escribe tu datos con el siguiente formado: nombre:apellidos:telefono:email:codigopostal");
-        let desglose= cadena.split(":");
-        let emailDesglosado= desglose[3].split("@");
-        let servidor=emailDesglosado[1];
+    Código postal
+    Apellidos
+    Email
+    Nombre del servidor asociado al email (ej. direccion@servidor)
+            */
 
-        return document.write(
-            "Codigo postal: " + desglose[4] + "<br>" + 
-            "Apellidos: " + desglose[1] + "<br>" + 
-            "Email: " + desglose[3] + "<br>" + 
-            "Servidor: " + servidor
-        );
- }
+        const mostrarInformacion = () => {
 
- mostrarInformacion();
+            let cadena = prompt("Escribe tu datos con el siguiente formado: nombre:apellidos:telefono:email:codigopostal");
+            let desglose = cadena.split(":");
+            let emailDesglosado = desglose[3].split("@");
+            let servidor = emailDesglosado[1];
+
+            return document.write(
+                "Codigo postal: " + desglose[4] + "<br>" +
+                "Apellidos: " + desglose[1] + "<br>" +
+                "Email: " + desglose[3] + "<br>" +
+                "Servidor: " + servidor
+            );
+        }
+
+        mostrarInformacion();
 
     </script>
 </body>
+
 </html>
