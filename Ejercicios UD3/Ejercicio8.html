@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio8</title>
+</head>
+
+<body>
+    <script>
+
+        let paises = [
+            "Argentina", "Brasil", "Chile", "Mexico", "Peru",
+            "España", "Francia", "Alemania", "Italia", "Portugal",
+            "Reino Unido", "Países Bajos", "Suecia", "Noruega", "Suiza"
+        ];
+
+
+        // Funcion para mostrar el numero de elementos del array
+        function mostrarNumeroPaises(paises) {
+            return paises.length;
+        }
+
+        // Funcion para mostrar los paises en orden normal
+        function mostrarPaisesNormal(paises) {
+            return "Paises: " + paises.join(", ");
+        }
+
+        // Funcion para mostrar los paises en orden invertido
+        function mostrarPaisesInvertido(paises) {
+            return "Paises en orden inverso: " + paises.slice().reverse().join(", ");
+        }
+
+        // Funcion para mostrar los paises en orden alfabetico
+        function mostrarPaisesAlfabetico(paises) {
+            return "Paises ordenados alfabeticamente: " + paises.slice().sort().join(", ");
+        }
+
+        // Funcion para anadir un elemento al principio del array
+        function anadirPaisPrincipio(paises, pais) {
+            paises.unshift(pais);
+            return "Anadido al principio: " + pais;
+        }
+
+        // Funcion para anadir un elemento al final del array
+        function anadirPaisFinal(paises, pais) {
+            paises.push(pais);
+            return "Anadido al final: " + pais;
+        }
+
+        // Funcion para borrar un elemento al principio del array
+        function borrarPaisPrincipio(paises) {
+            let eliminado = paises.shift();
+            return "Eliminado del principio: " + eliminado;
+        }
+
+        // Funcion para borrar un elemento al final del array
+        function borrarPaisFinal(paises) {
+            let eliminado = paises.pop();
+            return "Eliminado del final: " + eliminado;
+        }
+
+        // Funcion para mostrar un pais en una posicion indicada por el usuario
+        //no he podido sacarlo
+        function mostrarPaisPorPosicion() {
+
+        }
+
+        // Funcion para mostrar la posicion de un pais indicado por el usuario
+        function mostrarPosicionPorNombre(paises, nombre) {
+            let posicion = paises.indexOf(nombre);
+            if (posicion !== -1) {
+                return "El pais " + nombre + " se encuentra en la posicion " + posicion + ".";
+            } else {
+                return nombre + " no se encuentra en la lista.";
+            }
+        }
+
+        // Funcion para mostrar los paises en un intervalo indicado por el usuario
+        //no he podido sacarlo
+        function mostrarPaisesIntervalo() {
+
+        }
+
+        // Funcion para gestionar las opciones del usuario
+        function menu() {
+
+            let opcion = "";
+
+          
+            while (opcion !== "7") {
+                opcion = prompt("Elige una opcion:\n1. Mostrar numero de paises\n2. Mostrar listado de paises\n3. Mostrar un intervalo de paises\n4. Anadir un pais\n5. Borrar un pais\n6. Consultar un pais\n7. Salir");
+
+                switch (opcion) {
+                    case "1":
+                        alert(mostrarNumeroPaises(paises));
+                        break;
+                    case "2":
+                        let orden = prompt("Como quieres mostrar los paises? (normal, invertido, alfabetico)");
+                        if (orden === "normal") {
+                            alert(mostrarPaisesNormal(paises));
+                        } else if (orden === "invertido") {
+                            alert(mostrarPaisesInvertido(paises));
+                        } else if (orden === "alfabetico") {
+                            alert(mostrarPaisesAlfabetico(paises));
+                        } else {
+                            alert("Opcion no valida.");
+                        }
+                        break;
+                    case "3":
+                        let intervalo = prompt("Introduce el intervalo en formato inicio-fin");
+                        break;
+                    case "4":
+                        let nuevoPais = prompt("Introduce el nombre del pais a anadir:");
+                        let posicion = prompt("Donde quieres anadir el pais? (principio o final)");
+                        if (posicion === "principio") {
+                            alert(anadirPaisPrincipio(paises, nuevoPais));
+                        } else {
+                            alert(anadirPaisFinal(paises, nuevoPais));
+                        }
+                        break;
+                    case "5":
+                        let borrarPosicion = prompt("Donde quieres borrar el pais? (principio, final)");
+                        if (borrarPosicion === "principio") {
+                            alert(borrarPaisPrincipio(paises));
+                        } else {
+                            alert(borrarPaisFinal(paises));
+                        }
+                        break;
+                    case "6":
+                        let consulta = prompt("Como quieres consultar el pais? (posicion, nombre)");
+                        break;
+                    case "7":
+                        alert("Saliendo del programa.");
+                        break;
+                    default:
+                        alert("Inserte una opcion valida.");
+                }
+            }
+        }
+
+        menu();
+
+
+    </script>
+</body>
+
+</html>
