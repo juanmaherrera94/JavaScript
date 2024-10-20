@@ -62,6 +62,51 @@
             return document.write(tabla);
         }
 
+        const usuariosDeUnaProvincia = () => {
+            const provincia = prompt("Introduce la provincia:");
+            const filtrados = clientes.filter(cliente => cliente.localidad.toLowerCase() === provincia.toLowerCase());
+
+            let tabla = `<table border="1">
+                <tr><th>Nombre</th><th>Cuota</th></tr>`;
+                
+            filtrados.forEach(cliente => {
+                tabla += '<tr>' +
+                    '<td>' + cliente.nombre + '</td>' +
+                    '<td>' + cliente.cuota + '</td>' +
+                    '</tr>';
+            });
+
+            tabla += `</table>`;
+            document.write(tabla);
+        }
+
+        // Metodo para mostrar usuarios con cuota mayor o menor que un valor
+        const cuotaMayorOmenor = () => {
+            const valor = parseFloat(prompt("Introduce la cuota:"));
+            const condicion = prompt("Escribe 'mayor' o 'menor':").toLowerCase();
+            
+            const filtrados = clientes.filter(cliente => {
+                return (condicion === 'mayor' && cliente.cuota > valor) ||
+                       (condicion === 'menor' && cliente.cuota < valor);
+            });
+
+
+
+            let tabla = `<table border="1">
+                <tr><th>Nombre</th><th>Localidad</th><th>Cuota</th></tr>`;
+                
+            filtrados.forEach(cliente => {
+                tabla += '<tr>' +
+                    '<td>' + cliente.nombre + '</td>' +
+                    '<td>' + cliente.localidad + '</td>' +
+                    '<td>' + cliente.cuota + '</td>' +
+                    '</tr>';
+            });
+
+            tabla += `</table>`;
+            document.write(tabla);
+        }
+
         const menu = () => {
 
             let cadena;
@@ -85,8 +130,6 @@
                 }
             } while (cadena !== "1" && cadena !== "2" && cadena !== "3");
         }
-
-
 
         menu();
 

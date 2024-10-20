@@ -8,9 +8,9 @@ Pista: Recuerda que los meses en JavaScript empiezan desde el número 0.
 
 const fechaHoy = new Date();
 
-const fechaFinCursi = new Date(2025, 5, 22);
+const fechaFinCurso = new Date(2025, 5, 22);
 
-const diferencia =  fechaFinCursi - fechaHoy;
+const diferencia =  fechaFinCurso - fechaHoy;
 
 const diasRestantes = Math.floor(diferencia / (1000 * 60 * 60 * 24));
 
