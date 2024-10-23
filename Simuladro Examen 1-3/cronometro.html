@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cronometro</title>
+</head>
+<body>
+    <div id="reloj">00:00:00</div>   
+
+    <div id="botones">
+        <button onclick="reiniciar()">Poner a 0</button>
+        <button onclick="iniciar()">Arrancar</button>
+        <button onclick="detener()">Parar</button>
+        <button onclick="registrar()">Escribir tiempo</button>
+    </div>
+    
+    <div id="valores">
+        <h2>Valores:</h2>
+    </div>
+    
+    <script>
+        let temporizador;
+        let ejecucion = false;
+        let segundos = 0;
+        let horas;
+        let secs;
+        let minutos;
+
+        //funcion para actualizar el reloj que cada vez que se ejecute se incremente
+        const actualizarReloj = () => {
+            segundos++;
+            horas = Math.floor(segundos / 3600),
+            minutos = Math.floor((segundos % 3600) / 60),
+            secs = segundos  % 60;
+    
+            document.getElementById("reloj").innerText = `${rellenarCeros(horas)}:${rellenarCeros(minutos)}:${rellenarCeros(secs)}`;
+        };
+    
+        //funcion para inciar el reloj
+        const iniciar = () => {
+            if (!ejecucion) {
+                temporizador = setInterval(actualizarReloj,1000);
+                ejecucion = true;
+            }
+        };
+        //funcion para detener el reloj
+        const detener = () => {
+            clearInterval(temporizador);
+            ejecucion = false;
+        };
+        
+        //funcion para reinciar el reloj
+        const reiniciar = () => {
+            detener();
+            segundos = 0;
+            document.getElementById("reloj").innerText = "00:00:00";
+       
+        };
+    
+        //funcion para escribir el tiempo 
+        const registrar = () => {
+            const tiempo = document.getElementById("reloj").innerText;
+            document.getElementById("valores").innerHTML += `<p>${tiempo}</p>`;
+        };
+
+        //funcion para rellenar de ceros si el nunmero es menor a diez 
+        const rellenarCeros = (numero) => {
+
+            return numero < 10 ? `0${numero}` : numero;
+
+        }
+    </script>
+    
+</body>
+</html>
