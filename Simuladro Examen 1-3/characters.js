@@ -289,7 +289,7 @@ class StarWarsCharacters {
 
             let alturaPersonaje = altura.height;
 
-            let alturaModificada = alturaPersonaje - 0.10;
+            let alturaModificada = alturaPersonaje -10;
 
             arrayAltura.push(alturaModificada);
 
@@ -314,19 +314,15 @@ class StarWarsCharacters {
     }
 
     collectByName(characterName) {
+
         let personaje = characters.find((perso) => perso.name === characterName);
-        
-        if (personaje) {
-            this.collectedCharacters.push(personaje);
-        } else {
-            console.log('Personaje no encontrado');
-        }
+        this.collectedCharacters.push(personaje);
+
     }
 
-    removeByName(nombre) {
-        let objeto = characters.find((objeto) => objeto.name == nombre);
-        let posicion = characters.indexOf(objeto);
-        return this.collectedCharacters.splice(posicion, 1);
+    removeByName(characterName) {
+        this.collectedCharacters= this.collectedCharacters.filter(personaje=> personaje.name !== characterName);
+        // el nombre que le pasa por parameto no lo mete 
     }
 
     getCharacterFilms(characterName) {
@@ -342,17 +338,12 @@ class StarWarsCharacters {
 
         return resultado;
     }
-
-
-
-
 }
 
 let starWars = new StarWarsCharacters;
-
 console.log(starWars.getWomansName());
 console.log(starWars.getSmallerPeople());
 console.log(starWars.avgMass());
-console.log(starWars.collectByName("Luke Skywalker"));
-console.log(starWars.removeByName("C-3PO"));
+starWars.collectByName("Luke Skywalker");
+console.log(starWars.collectedCharacters);
 console.log(starWars.getCharacterFilms("C-3PO"));
