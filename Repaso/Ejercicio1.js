@@ -1,10 +1,11 @@
 class Producto{
+
     constructor(nombre,precio,categoria){
         this.nombre=nombre;
         this.precio=precio;
         this.categoria=categoria;
     }
-}
+};
 
 class Carrito{
 
@@ -12,26 +13,19 @@ class Carrito{
         this.productos = [];
     }
 
-
-    aniadirProducto = (producto) =>{
+    agregarProducto (producto){
 
         this.productos.push(producto);
 
     }
 
     mostrarProductos() {
-        this.productos.forEach((producto, i) => {
-            console.log(
-                (i + 1) + ". Nombre: " + producto.nombre + 
-                ", Precio: " + producto.precio + 
-                ", Categoria: " + producto.categoria
-            );
-        });
+        return this.productos;
     }
 
     calcularTotal () {
-
-        return this.productos.reduce((total, producto) => total + producto.precio, 0);
+    
+      return this.productos.reduce((total, producto) => total += producto.precio,0);
     
     }
 }
@@ -42,11 +36,10 @@ const producto3 = new Producto("Gorra", 14.99, "Accesorios");
 
 const carrito = new Carrito();
 
-carrito.aniadirProducto(producto1);
-carrito.aniadirProducto(producto2);
-carrito.aniadirProducto(producto3);
+carrito.agregarProducto(producto1);
+carrito.agregarProducto(producto2);
+carrito.agregarProducto(producto3);
 
-
-
+console.log(carrito.mostrarProductos());
 
 console.log("Total :" + carrito.calcularTotal());
